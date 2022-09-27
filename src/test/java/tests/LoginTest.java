@@ -14,9 +14,10 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void sucessfulLoginTest() {
-        loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
-        assertTrue(productsPage.isOpened(), "Titile of the page is not displayed");
+        loginPage
+                .open()
+                .login("standard_user", "secret_sauce");
+        assertTrue(productsPage.isOpened(), "Title of the page is not displayed");
 
     }
 
@@ -24,9 +25,7 @@ public class LoginTest extends BaseTest {
     public void negativeLogin(String userName, String password, String error) {
         loginPage.open();
         loginPage.login(userName, password);
-        assertEquals(loginPage.getError(),
-                error,
-                "Wrong error message show");
+        assertEquals(loginPage.getError(), error,"Wrong error message show");
 
     }
 
@@ -72,7 +71,7 @@ public class LoginTest extends BaseTest {
     @DataProvider
     public Object[][] loginData() {
         return new Object[][]{
-                {"standard_user", "secred_sauce", "Epic sadface: Username and password do not match any user in this service"},
+                {"standard_user", "secret_sauce", "Epic sadface: Username and password do not match any user in this service"},
                 {"", "secret_sauce", "Epic sadface: username is required"},
                 {"standard_user", "", "Epic sadface: Password is required"}
         };
