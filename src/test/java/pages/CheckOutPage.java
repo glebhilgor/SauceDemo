@@ -8,11 +8,11 @@ import static org.testng.Assert.assertTrue;
 public class CheckOutPage extends BasePage {
 
 
-    private By FIRSTNAME_INPUT = By.id("first-name");
-    private By LASTNAME_INPUT = By.id("last-name");
-    private By ZIPCODE_INPUT = By.id("postal-code");
-    private By CONTINUE_BUTTON = By.id("continue");
-    private By ERROR_MESSAGE = By.cssSelector("[data-test=error]");
+    private final By FIRSTNAME_INPUT = By.id("first-name");
+    private final By LASTNAME_INPUT = By.id("last-name");
+    private final By ZIPCODE_INPUT = By.id("postal-code");
+    private final By CONTINUE_BUTTON = By.id("continue");
+    private final By ERROR_MESSAGE = By.cssSelector("[data-test=error]");
 
 
 

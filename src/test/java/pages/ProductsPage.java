@@ -14,9 +14,9 @@ import static org.testng.Assert.assertTrue;
 public class ProductsPage extends BasePage {
 
     private final By PAGE_TITLE = By.cssSelector(".title");
-    private By FILTER_BUTTON = By.cssSelector(".product_sort_container");
-    private By NEW_WINDOW = By.xpath("//span[contains(text(),'@saucelabs')]");
-    private By NEW_WINDOWLINKEDIN = By.xpath("//h1[contains(text(),'Присоединитесь к LinkedIn')]");
+    private final By FILTER_BUTTON = By.cssSelector(".product_sort_container");
+    private final By NEW_WINDOW = By.xpath("//span[contains(text(),'@saucelabs')]");
+    private final By NEW_WINDOWLINKEDIN = By.xpath("//h1[contains(text(),'Присоединитесь к LinkedIn')]");
     WebElement element;
     Select select;
 

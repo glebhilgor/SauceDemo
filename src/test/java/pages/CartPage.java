@@ -1,13 +1,14 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class CartPage extends BasePage {
 
     private final By CHECKOUT_BUTTON = By.id("checkout");
-    private By CART_ITEM = By.cssSelector(".inventory_item_name");
-    private String totalQuantity;
+    private final By CART_ITEM = By.cssSelector(".inventory_item_name");
+    public String totalQuantity;
 
 
     public CartPage(WebDriver driver) {
@@ -18,6 +19,7 @@ public class CartPage extends BasePage {
         return waitForVisibility(CHECKOUT_BUTTON);
     }
 
+@Step("Looking for the product")
     public String getProductPrice(String product) {
         String locator = String.format("//div[text()='%s']//ancestor::div[@class='cart_item']/" +
                         "/div[@class='inventory_item_price']",

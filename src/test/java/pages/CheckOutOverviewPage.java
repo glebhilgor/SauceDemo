@@ -6,10 +6,10 @@ import org.openqa.selenium.WebDriver;
 public class CheckOutOverviewPage extends BasePage {
 
     private final By PAGE_TITLE = By.xpath("//span[text()='Checkout: Overview']");
-    private By FINISH_BUTTON = By.id("finish");
-    private By ITEM_TOTAL = By.cssSelector(".summary_subtotal_label");
-    private By TOTAL_COST = By.cssSelector(".summary_total_label");
-    private By TAX = By.cssSelector(".summary_tax_label");
+    private final By FINISH_BUTTON = By.id("finish");
+    private final By ITEM_TOTAL = By.cssSelector(".summary_subtotal_label");
+    private final By TOTAL_COST = By.cssSelector(".summary_total_label");
+    private final By TAX = By.cssSelector(".summary_tax_label");
 
 
     public CheckOutOverviewPage(WebDriver driver) {
