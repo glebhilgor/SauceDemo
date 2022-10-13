@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -15,8 +16,6 @@ public class CheckOutPage extends BasePage {
     private final By ERROR_MESSAGE = By.cssSelector("[data-test=error]");
 
 
-
-
     public CheckOutPage(WebDriver driver) {
         super(driver);
     }
@@ -26,8 +25,7 @@ public class CheckOutPage extends BasePage {
 
     }
 
-
-
+    @Step("Fill the checkout line with the info")
     public void fillInCheckout(String firstName, String lastName, String zipCode) {
 
         driver.findElement(FIRSTNAME_INPUT).sendKeys(firstName);
@@ -36,7 +34,9 @@ public class CheckOutPage extends BasePage {
         driver.findElement(CONTINUE_BUTTON).click();
 
     }
-    public String getError(){
+
+    @Step("Find error message")
+    public String getError() {
         return driver.findElement(ERROR_MESSAGE).getText();
     }
 }

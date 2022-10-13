@@ -28,7 +28,7 @@ public class LoginPage extends BasePage {
         driver.findElement(LOGIN_BUTTON).click();
     }
 
-    // @Step("Getting error message") - необязательно
+    @Step("Getting error message")
     public String getError() {
         return driver.findElement(ERROR_MESSAGE).getText();
     }

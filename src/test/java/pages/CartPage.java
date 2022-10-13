@@ -19,7 +19,7 @@ public class CartPage extends BasePage {
         return waitForVisibility(CHECKOUT_BUTTON);
     }
 
-@Step("Looking for the product")
+    @Step("Looking for the product")
     public String getProductPrice(String product) {
         String locator = String.format("//div[text()='%s']//ancestor::div[@class='cart_item']/" +
                         "/div[@class='inventory_item_price']",
@@ -32,10 +32,12 @@ public class CartPage extends BasePage {
         driver.findElement(CHECKOUT_BUTTON).click();
     }
 
+    @Step("Remove from cart action")
     public void removeFromCart() {
         driver.findElement(By.xpath("//*[text()='Remove']")).click();
     }
 
+    @Step("Find how much products in the cart")
     public String getItemsQuantity() {
 
         int arraySize = driver.findElements(CART_ITEM).size();

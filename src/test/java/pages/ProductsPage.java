@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,6 +34,7 @@ public class ProductsPage extends BasePage {
         //driver.findElement(PAGE_TITLE).isDisplayed();
     }
 
+    @Step("Adding product to the cart")
     public void addToCart(String product) {
         String locator = String.format("//*[text()='%s']//ancestor::div[@class='inventory_item']//button",
                 product);
@@ -62,6 +64,7 @@ public class ProductsPage extends BasePage {
         return select.getFirstSelectedOption().isSelected();
     }
 
+    @Step("If media is work")
     public void mediaCheck() {
         Set<String> allWindowHandles = driver.getWindowHandles();
         ArrayList<String> tabs = new ArrayList<String>(allWindowHandles);
@@ -78,6 +81,7 @@ public class ProductsPage extends BasePage {
 
         return driver.findElement(NEW_WINDOW).isDisplayed();
     }
+
     public boolean linkedinOpen() {
         return driver.findElement(NEW_WINDOWLINKEDIN).isDisplayed();
     }
